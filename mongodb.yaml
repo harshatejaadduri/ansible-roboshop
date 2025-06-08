@@ -12,8 +12,9 @@
        name: mongodb-org 
        state: present
   
-    - name: installing mongodb
+    - name: enabling and starting Monogod Service
       ansible.builtin.service:
+        name: mongod
         state: started
         enabled: Yes
 
@@ -22,3 +23,9 @@
       path: /etc/mongod.conf
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
+
+    - name: installing mongodb
+      ansible.builtin.service:
+        name: mongod
+        state: restarted
+       
