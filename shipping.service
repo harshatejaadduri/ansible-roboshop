@@ -6,6 +6,7 @@ User=roboshop
 // highlight-start
 Environment=CART_ENDPOINT=cart.84dev.store:8080
 Environment=DB_HOST=mysql.84dev.store
+// highlight-end
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
