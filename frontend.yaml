@@ -50,7 +50,7 @@
    - name: Copying content
      ansible.builtin.copy:
       src: nginx.conf
-      dest: /usr/share/nginx/html
+      dest: /etc/nginx/nginx.conf
 
    - name: Restart nginx
      tags:
