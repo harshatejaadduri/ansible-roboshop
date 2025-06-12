@@ -50,8 +50,7 @@
    
    - name: Restart service after config changes
      ansible.builtin.systemd_service:
-      state: restarted
-      daemon_reload: true
+       daemon_reload: true
      
    - name: Starting and Enabling user
      ansible.builtin.service:
