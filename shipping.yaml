@@ -62,13 +62,13 @@
 
     - name: Importing dbs 
       community.mysql.mysql_db:
+        name: all
         login_user: root
         login_password: RoboShop@1
         login_host: mysql.84dev.store 
-        name: all
         state: import 
         target: "{{ item }}"
-        loop:
+      loop:
         - /app/db/schema.sql
         - /app/db/app-user.sql              
         - /app/db/master-data.sql
