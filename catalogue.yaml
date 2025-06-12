@@ -65,8 +65,8 @@
 
    - name: Install mongod client Server
      ansible.builtin.dnf:
-     name: mongodb-mongosh
-     state: present
+      name: mongodb-mongosh
+      state: installed
 
    - name: check products loaded or not
      ansible.builtin.command: mongosh --host mongodb.84dev.store --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
