@@ -67,7 +67,7 @@
         user_host: mysql.84dev.store 
         name: all
         state: import 
-        target: {{ item }}
+        target: "{{ item }}"
         loop:
         - /app/db/schema.sql
         - /app/db/app-user.sql              
