@@ -57,8 +57,11 @@
 
     - name: Installing mysql
       ansible.builtin.dnf:
-       name: mysql
+       name: "{{ item }}"
        state: present
+      loop:
+       - mysql
+       - PyMySql
 
     - name: Importing dbs 
       tags:
