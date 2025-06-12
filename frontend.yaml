@@ -26,7 +26,7 @@
 
    - name: Creating directory
      ansible.builtin.file:
-      src: /usr/share/nginx/html
+      path: /usr/share/nginx/html
       state: directory
    
    - name: Downloading code
