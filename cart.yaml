@@ -39,8 +39,7 @@
       
    - name: Installing dependencies
      community.general.npm:
-       name: npm
-       path: /app
+      path: /app
 
    - name: Copying cart.service files
      ansible.builtin.copy:
