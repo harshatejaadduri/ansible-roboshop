@@ -23,7 +23,7 @@
      ansible.builtin.lineinfile:
       path: /etc/mongod.conf
       regexp: 'protected-mode yes'
-      replace: 'protected-mode no'
+      line: protected-mode no
      
    -  name: Enabling and Starting service
       ansible.builtin.service:
