@@ -1,6 +1,6 @@
 - name: Configuring cart service
   hosts: cart
-  become: Yes
+  become: yes
   tasks:
    - name: Disabling previous nodejs
      ansible.builtin.command: dnf module disable nodejs -y

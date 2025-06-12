@@ -1,6 +1,6 @@
 - name: Configuring catalogue service
   hosts: catalogue
-  become: Yes
+  become: yes
   tasks:
    - name: Disabling previous nodejs
      ansible.builtin.command: dnf module disable nodejs -y
@@ -39,7 +39,6 @@
 
    - name: Installing dependencies
      community.general.npm:
-       name: npm
        path: /app
 
    - name: Copying Catalogue.service files

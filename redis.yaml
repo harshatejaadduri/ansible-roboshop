@@ -1,6 +1,6 @@
 - name: Configuring redis Server
   hosts: redis
-  become: Yes
+  become: yes
   tasks:
    - name: Disable previous redis version
      ansible.builtin.command: dnf module disable redis -y
@@ -22,7 +22,7 @@
    - name: Changing mode 
      ansible.builtin.lineinfile:
       path: /etc/redis/redis.conf
-      regexp: 'protected-mode yes'
+      regexp: 'protected-mode'
       line: protected-mode no
      
    -  name: Enabling and Starting service
