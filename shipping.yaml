@@ -2,10 +2,21 @@
   hosts: shipping
   become: yes
   tasks:
-    - name: Installing Maven
+    - name: Installing Maven and mysql
       ansible.builtin.dnf:
-       name: maven 
+       name: "{{ item }}"
        state: present
+      loop:
+      - maven 
+      - mysql
+
+    - name: install PyMySQL and cryptography 
+      ansible.builtin.pip:
+        name: "{{ item }}"
+        executable: pip3.9
+      loop:
+    - cryptography
+    - PyMySQL
 
     - name: Creating RoboShop User
       ansible.builtin.user:
@@ -54,14 +65,6 @@
         name: shipping
         state: started
         enabled: yes
-
-    - name: Installing mysql
-      ansible.builtin.dnf:
-       name: "{{ item }}"
-       state: present
-      loop:
-       - mysql
-       - PyMySql
 
     - name: Importing dbs 
       tags:
