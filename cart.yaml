@@ -14,7 +14,7 @@
        state: present
 
    - name: Addding Roboshop user
-     ansible.builtin.cart:
+     ansible.builtin.user:
        name: roboshop 
        shell: /sbin/nologin
        system: true
