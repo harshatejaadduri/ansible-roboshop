@@ -5,12 +5,12 @@
     - name: copying files to repos folder
       ansible.builtin.copy:
        src: mongodb.repo
-       dest: /etc/yum.repos.d/mongo.repos
+       dest: /etc/yum.repos.d/mongo.repo
 
     - name: installing mongodb
       ansible.builtin.dnf:
        name: mongodb-org
-       state: installed
+       state: present
   
     - name: enabling and starting Monogod Service
       ansible.builtin.service:
