@@ -10,7 +10,7 @@
     - name: installing mongodb
       ansible.builtin.dnf:
        name: mongodb-org 
-       state: present
+       state: installed
   
     - name: enabling and starting Monogod Service
       ansible.builtin.service:
