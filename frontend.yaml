@@ -53,6 +53,8 @@
       dest: /usr/share/nginx/html
 
    - name: Restart nginx
+     tags:
+      - restart
      ansible.builtin.service:
       name: nginx
       state: restarted
