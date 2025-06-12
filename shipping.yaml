@@ -61,6 +61,8 @@
        state: present
 
     - name: Importing dbs 
+      tags:
+      - import
       community.mysql.mysql_db:
         name: all
         login_user: root
