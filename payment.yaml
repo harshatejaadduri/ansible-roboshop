@@ -34,12 +34,12 @@
         dest: /app
         remote_src: yes
       
-    - name: Installing dependencies
+    - name: install dependencies
       ansible.builtin.pip:
-       requriments: requirements.txt
-       executable: pip3.9
+        requirements: requirements.txt
+        executable: pip3.9
       args:
-        chdir: /app
+       chdir: /app
 
     - name: Copying serv files
       ansible.builtin.copy:
