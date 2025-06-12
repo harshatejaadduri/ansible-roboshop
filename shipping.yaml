@@ -60,4 +60,19 @@
        name: mysql
        state: present
 
-    - name:              
+    - name: Importing dbs 
+      community.mysql.mysql_db:
+        user_login: root
+        user_password: RoboShop@1
+        user_host: mysql.84dev.store 
+        name: all
+        state: import 
+        target: '{{ item }}'
+        loop:
+        - /app/db/schema.sql
+        - /app/db/app-user.sql              
+        - /app/db/master-data.sql
+
+    - name: Restart shipping
+      ansible.builtin.service:
+        state: restarted
