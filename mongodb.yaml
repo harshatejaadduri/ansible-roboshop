@@ -1,6 +1,6 @@
 - name: Configuring Monogodb Server
   hosts: mongodb 
-  become: Yes
+  become: yes
   tasks:
     - name: copying files to repos folder
       ansible.builtin.copy:
@@ -16,7 +16,7 @@
       ansible.builtin.service:
         name: mongod
         state: started
-        enabled: Yes
+        enabled: yes
 
     - name: Changing local host 
       ansible.builtin.replace:
